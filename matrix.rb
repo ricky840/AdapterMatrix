@@ -7,12 +7,9 @@ require 'nokogiri'
 FIREBASE_DB_BASE_URL = "https://mopub-adcomm-matrix.firebaseio.com"
 IOS_MEDIATION = "https://github.com/mopub/mopub-ios-mediation"
 AOS_MEDIATION = "https://github.com/mopub/mopub-android-mediation"
-
 CHANGE_LOG_AOS_BASE_URL = "https://github.com/mopub/mopub-android-mediation/blob/master/"
 CHANGE_LOG_IOS_BASE_URL = "https://github.com/mopub/mopub-ios-mediation/blob/master/"
 CHANGE_LOG_FILE_NAME = "/CHANGELOG.md"
-
-firebase = Firebase::Client.new(FIREBASE_DB_BASE_URL)
 
 def getChangeLogUrls(available_networks)
   change_log_urls = {}
@@ -167,7 +164,6 @@ def parseChangeLogHtml(changelog_html)
   return change_logs
 end
 
-
 def createVersionObj(version_string)
   begin
     return Gem::Version.new(version_string)
@@ -175,7 +171,6 @@ def createVersionObj(version_string)
     return Gem::Version.new("")
   end
 end
-
 
 def findMatchingNetwork(input_network, network_list)
   matched = false
@@ -195,19 +190,19 @@ def findMatchingNetwork(input_network, network_list)
  return matched == false ? false : matched 
 end
 
-
-
-
-
-# Main
+# Main Starts
+firebase = Firebase::Client.new(FIREBASE_DB_BASE_URL)
 
 # Get available networks
+puts "Getting available networks"
 available_networks = getAvailableNetworks()
 
 # Retreive change log urls
+puts "Retreving change log urls"
 change_log_urls = getChangeLogUrls(available_networks)
 
 # Structure change log urls
+puts "Structuring change log urls"
 target_network_urls = change_log_urls.each_with_object({}) do |(platform, network_urls), target_urls|
   network_urls.each do |network, url|
     target_urls[platform] != nil ? target_urls[platform][network] = url : target_urls[platform] = {network => url}
@@ -215,11 +210,13 @@ target_network_urls = change_log_urls.each_with_object({}) do |(platform, networ
 end
 
 # Get change log htmls
+puts "Downloading change logs"
 changelog_htmls = target_network_urls.each_with_object({}) do |(platform, network_urls), log_htmls|
   log_htmls[platform] = getContentFromGitHub(network_urls)
 end
 
-# Change log messages
+# Parse change log messages
+puts "Parsing change logs"
 parsed_change_logs = changelog_htmls.each_with_object({}) do |(platform, network_htmls), parsed_logs|
   network_htmls.each do |network, html|
     change_log = parseChangeLogHtml(html)
@@ -227,5 +224,8 @@ parsed_change_logs = changelog_htmls.each_with_object({}) do |(platform, network
   end
 end
 
-# Push it to firebase
-firebase_result = firebase.push("test", parsed_change_logs)
+# Push it to firebase!
+puts "Pushing it to firebase"
+current_time = Time.now.utc.strftime("%d-%m-%Y_%H-%M-%S")
+firebase_result = firebase.set(current_time, parsed_change_logs)
+puts firebase_result.code
