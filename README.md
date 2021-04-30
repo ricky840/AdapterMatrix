@@ -13,6 +13,7 @@
     <ul type="changelogs">
     	<li>This version of the adapters has been certified with AdMob 20.0.0 and MoPub 5.16.4.</li>
       <li>This version of the adapters has beenfdsfds certified with AdMob 20.0.0 and MoPub 5.16.4.</li>
+            <li>This version of the adapters has beenfdsfds certified with AdMob 20.0.0 and MoPub 5.16.4.</li>
       <li>List item two with subitems:
         <ul>
             <li>Subitem 1</li>
