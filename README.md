@@ -3,7 +3,7 @@
   <dt type="adapter-version" label="certified-width_5.16.4">20.0.0.1</dt>
   <dd>
     <ul type="change-logs">
-    	<li>Set MediaView's scale type to `CENTER_CROP` to fix native ad alignment issues.</li>
+    	<li>Set MediaView's scale type to <code>CENTER_CROP</code> to fix native ad alignment issues.</li>
     </ul>
   </dd>
 
