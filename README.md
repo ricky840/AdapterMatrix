@@ -29,13 +29,6 @@
     </ul>
   </dd>
 
-  <dt title="adapter-version" label="certified-with_5.16.3">19.7.0.1</dt>
-  <dd>
-    <ul title="change-logs">
-    	<li>Service release. No code changes.</li>
-    </ul>
-  </dd>
-
   <dt title="adapter-version" label="certified-with_5.16.0">19.7.0.0</dt>
   <dd>
     <ul title="change-logs">
