@@ -12,9 +12,9 @@
   <dd>
     <ul type="changelogs">
     	<li>This version of the adapters has been certified with AdMob 20.0.0 and MoPub 5.16.4.</li>
-      <li>This version of the adapters has beenfdsfds certified with AdMob 20.0.0 and MoPub 5.16.4.</li>
-            <li>This version of the adapters has beenfdsfds certified with AdMob 20.0.0 and MoPub 5.16.4.</li>
-      <li>List item two with subitems:
+      <li>hello1</li>
+      <li>hello2</li>
+      <li>List item two with subitems
         <ul>
             <li>Subitem 1</li>
             <li>Subitem 2</li>
