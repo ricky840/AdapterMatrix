@@ -1,30 +1,30 @@
 ## Changelog
 <dl>
-  <dt type="adapter-version" label="certified-width_5.16.4">20.0.0.1</dt>
+  <dt title="adapter-version" label="certified-width_5.16.4">20.0.0.1</dt>
   <dd>
-    <ul type="change-logs">
+    <ul title="change-logs">
     	<li>Set MediaView's scale type to <code>CENTER_CROP</code> to fix native ad alignment issues.</li>
     </ul>
   </dd>
 
-  <dt type="adapter-version" label="certified-with_5.16.4">20.0.0.0</dt>
+  <dt title="adapter-version" label="certified-with_5.16.4">20.0.0.0</dt>
   <dd>
-    <ul type="change-logs">
+    <ul title="change-logs">
     	<li>This version of the adapters has been certified with AdMob 20.0.0 and MoPub 5.16.4.</li>
     </ul>
   </dd>
 
-  <dt type="adapter-version" label="certified-with_5.16.3">19.8.0.0</dt>
+  <dt title="adapter-version" label="certified-with_5.16.3">19.8.0.0</dt>
   <dd>
-    <ul type="change-logs">
+    <ul title="change-logs">
     	<li>This version of the adapters has been certified with AdMob 19.8.0 and MoPub 5.16.3.</li>
     	<li>Align impression tracking for non-native ad formats based on Google's <code>onAdImpression()</code> callback.</li>
     </ul>
   </dd>
 
-  <dt type="adapter-version" label="certified-with_5.16.3">19.7.0.1</dt>
+  <dt title="adapter-version" label="certified-with_5.16.3">19.7.0.1</dt>
   <dd>
-    <ul type="change-logs">
+    <ul title="change-logs">
     	<li>Service release. No code changes.</li>
     </ul>
   </dd>
